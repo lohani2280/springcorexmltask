@@ -11,12 +11,15 @@ public class Main {
         ApplicationContext ctx = new ClassPathXmlApplicationContext("beans.xml");
 
         Movie x_movie = ctx.getBean("MovieA", Movie.class);
-        System.out.println(x_movie);
         x_movie.printActor();
 
         Movie y_movie = ctx.getBean("MovieB", Movie.class);
         y_movie.printActor();
-        System.out.println(y_movie);
-        System.out.println(x_movie == y_movie);
+
+        Movie z_movie = ctx.getBean("MovieC", Movie.class);
+        z_movie.printActor();
+
+        Movie a_movie = ctx.getBean("MovieD", Movie.class);
+        a_movie.printActor();
     }
 }

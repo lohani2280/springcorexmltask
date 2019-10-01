@@ -14,18 +14,22 @@
     </bean>
 
     <bean id="actor2" class="com.stackroute.domain.Actor" >
-        <property name="name" value="ranjan"/>
+        <property name="name" value="ayush"/>
         <property name="gender" value="male"/>
         <property name="age" value="22"/>
     </bean>
 
-    <bean id="actor3" class="com.stackroute.domain.Actor" >
-        <property name="name" value="lohani"/>
-        <property name="gender" value="male"/>
-        <property name="age" value="21"/>
+    <bean id="MovieA" class="com.stackroute.domain.Movie" autowire="byName" />
+
+    <bean id="MovieB" class="com.stackroute.domain.Movie">
+        <property name="actor1" ref="actor2"/>
     </bean>
 
-    <bean name="MovieA, MovieB" class="com.stackroute.domain.Movie" scope="singleton" >
+    <bean id="MovieC" class="com.stackroute.domain.Movie">
+        <constructor-arg index="0" ref="actor1"/>
+    </bean>
+
+    <bean id="MovieD" class="com.stackroute.domain.Movie">
         <constructor-arg name="actor" ref="actor1"/>
     </bean>
 
