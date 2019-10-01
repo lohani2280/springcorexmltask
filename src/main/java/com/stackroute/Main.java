@@ -2,10 +2,6 @@ package com.stackroute;
 
 import com.stackroute.domain.Movie;
 
-//import org.springframework.beans.factory.BeanFactory;
-//import org.springframework.beans.factory.xml.XmlBeanFactory;
-//import org.springframework.core.io.ClassPathResource;
-
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -13,9 +9,14 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Main {
     public static void main( String[] args ){
         ApplicationContext ctx = new ClassPathXmlApplicationContext("beans.xml");
-//        BeanFactory ctx = new XmlBeanFactory(new ClassPathResource("beans.xml"));
 
-        Movie x_movie = ctx.getBean("movie", Movie.class);
+        Movie x_movie = ctx.getBean("MovieA", Movie.class);
+        System.out.println(x_movie);
         x_movie.printActor();
+
+        Movie y_movie = ctx.getBean("MovieB", Movie.class);
+        y_movie.printActor();
+        System.out.println(y_movie);
+        System.out.println(x_movie == y_movie);
     }
 }
