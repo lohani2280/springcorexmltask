@@ -3,6 +3,7 @@ package com.stackroute;
 import com.stackroute.domain.Movie;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 
@@ -21,5 +22,7 @@ public class Main {
 
         Movie a_movie = ctx.getBean("MovieD", Movie.class);
         a_movie.printActor();
+
+        ((ConfigurableApplicationContext)ctx).close();
     }
 }
