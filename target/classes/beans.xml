@@ -14,9 +14,15 @@
     </bean>
 
     <bean id="actor2" class="com.stackroute.domain.Actor" >
-        <property name="name" value="ayush"/>
+        <constructor-arg index="0" value="lohani" type="java.lang.String"/>
+        <constructor-arg index="1" value="male" type="java.lang.String"/>
+        <constructor-arg index="2" value="23" type="int"/>
+    </bean>
+
+    <bean id="actor3" class="com.stackroute.domain.Actor" >
+        <property name="name" value="ranjan"/>
         <property name="gender" value="male"/>
-        <property name="age" value="22"/>
+        <property name="age" value="20"/>
     </bean>
 
     <bean id="MovieA" class="com.stackroute.domain.Movie" autowire="byName" />
